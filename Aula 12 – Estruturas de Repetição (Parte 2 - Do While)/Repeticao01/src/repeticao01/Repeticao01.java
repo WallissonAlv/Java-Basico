@@ -15,11 +15,11 @@ public class Repeticao01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int cc = 0;
+        int cc =1;
         do {
             System.out.println("cambalhota "+cc);
             cc++;
-        } while (cc<4);
+        } while (cc<5);
     }
     
 }
