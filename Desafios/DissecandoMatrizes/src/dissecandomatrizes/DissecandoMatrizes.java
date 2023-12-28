@@ -9,7 +9,7 @@ public class DissecandoMatrizes {
         Scanner teclado = new Scanner (System.in);
         int[][] matriz = new int [5][5];
         int linha,coluna,esc;
-        String resp = "S";
+        int resp = 1;
         
         System.out.println("======================");
         System.out.println("   CRIANDO MATRIZES   ");
@@ -24,7 +24,7 @@ public class DissecandoMatrizes {
         }
         
         // ESCOLHER OPÇÕES
-        do {
+        while (resp == 1){
             System.out.println(" MENU DE OPCOES ");
             System.out.println("========================");
             System.out.println("[1] MOSTRAR MATRIZ");
@@ -34,9 +34,10 @@ public class DissecandoMatrizes {
             System.out.println("[5] SAIR");
             System.out.print  ("================= OPCAO: ");
             esc = teclado.nextInt();
-            
+
             switch(esc){
                 case 1 -> {
+                    resp = 1;
                     for(linha = 1 ; linha<5 ; linha++){
                         for(coluna = 1 ; coluna<5 ; coluna++){
                             System.out.print("   "+matriz[linha][coluna]);
@@ -44,7 +45,8 @@ public class DissecandoMatrizes {
                         System.out.println("");
                     }
                 }    
-                case 2 -> {   
+                case 2 -> {
+                    resp = 1;
                     for(linha = 1 ; linha<5 ; linha++){
                         for(coluna = 1 ; coluna<5 ; coluna++){
                             if(linha == coluna){
@@ -56,6 +58,7 @@ public class DissecandoMatrizes {
                     }
                 }  
                 case 3 -> {
+                    resp = 1;
                     for(linha = 1 ; linha<5 ; linha++){
                         for(coluna = 1 ; coluna<5 ; coluna++){
                             if(linha < coluna){
@@ -67,6 +70,7 @@ public class DissecandoMatrizes {
                     }
                 }
                 case 4 -> {
+                    resp = 1;
                     for(linha = 1 ; linha<5 ; linha++){
                         for(coluna = 1 ; coluna<5 ; coluna++){
                             if(linha > coluna){
@@ -78,10 +82,10 @@ public class DissecandoMatrizes {
                     }
                 }
                 case 5 -> {
-                    resp = "Nao";
+                    resp = 0;
                 }
             }
-        }while(resp.equals("Nao"));
+        }    
         System.out.println(" S A I N D O ");
     }
     
